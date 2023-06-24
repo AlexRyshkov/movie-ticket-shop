@@ -16,3 +16,9 @@ type ReviewType = {
   text: string;
   rating: number;
 };
+
+type CinemaType = {
+  id: string;
+  name: string;
+  movieIds: string[];
+};

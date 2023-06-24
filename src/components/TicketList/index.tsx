@@ -29,7 +29,7 @@ TicketList.Item = function Item({ item }: TicketListItemProps) {
         </div>
       </div>
       <div className={classes.itemRight}>
-        <TicketCounter />
+        <TicketCounter movieId={item.id} />
       </div>
     </div>
   );

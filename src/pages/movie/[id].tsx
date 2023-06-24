@@ -37,7 +37,7 @@ function Movie({ movie, reviews }: Props) {
         <div className={s.information}>
           <div className={s.titleRow}>
             <span className={s.title}>{movie.title}</span>
-            <TicketCounter />
+            <TicketCounter movieId={movie.id} />
           </div>
           <div className={s.infoBlock}>
             <InfoLine label="Жанр:" text={movie.genre} />

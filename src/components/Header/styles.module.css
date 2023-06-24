@@ -11,10 +11,35 @@
   color: var(--white-1);
 }
 
+.order {
+  display: flex;
+  column-gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.ticketCount {
+  display: flex;
+
+  width: 28px;
+  height: 28px;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  background: var(--orange);
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
 .orderLink {
   border: none;
   background: none;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 
 .homeLink {

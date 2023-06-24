@@ -37,6 +37,7 @@ function MainPage() {
     [movies]
   );
 
+  console.log(movies);
   return (
     <div className={classes.container}>
       <div className={classes.searchFilterContainer}>
