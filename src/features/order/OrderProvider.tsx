@@ -35,11 +35,11 @@ function OrderProvider({ children }: Props) {
   const [order, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
-    // const localStorageOrder = localStorage.getItem("order");
-    // if (localStorageOrder !== null) {
-    //   const order = JSON.parse(localStorageOrder);
-    //   dispatch({ type: "init", payload: order });
-    // }
+    const localStorageOrder = localStorage.getItem("order");
+    if (localStorageOrder !== null) {
+      const order = JSON.parse(localStorageOrder);
+      dispatch({ type: "init", payload: order });
+    }
   }, []);
 
   useEffect(() => {

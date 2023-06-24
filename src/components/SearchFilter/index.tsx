@@ -112,7 +112,7 @@ SearchFilter.Select = function Select({
 
 type SearchFilterProps = {
   filterValue: SearchFilterValue;
-  onFilterChange: (filterValue: SearchFilterValue) => void;
+  onFilterChange: changeFunctionType;
 };
 
 function SearchFilter({ filterValue, onFilterChange }: SearchFilterProps) {
@@ -126,10 +126,6 @@ function SearchFilter({ filterValue, onFilterChange }: SearchFilterProps) {
     fetchCinemas();
   }, []);
 
-  const filterChangeHandler: changeFunctionType = (name, value) => {
-    onFilterChange({ ...filterValue, [name]: value });
-  };
-
   return (
     <div className={classes.searchFilter}>
       <div className={classes.title}>Фильтр поиска</div>
@@ -139,7 +135,7 @@ function SearchFilter({ filterValue, onFilterChange }: SearchFilterProps) {
           label="Название"
           placeholder="Выберите название"
           name="title"
-          onChange={filterChangeHandler}
+          onChange={onFilterChange}
         />
         <SearchFilter.FormControl
           type="select"
@@ -151,16 +147,16 @@ function SearchFilter({ filterValue, onFilterChange }: SearchFilterProps) {
           ]}
           label="Жанр"
           placeholder="Выберите жанр"
-          name="cinemaName"
-          onChange={filterChangeHandler}
+          name="genre"
+          onChange={onFilterChange}
         />
         <SearchFilter.FormControl
           type="select"
           options={cinemas.map((item) => ({ text: item.name, value: item.id }))}
           label="Кинотеатр"
           placeholder="Выберите кинотеатр"
-          name="genre"
-          onChange={filterChangeHandler}
+          name="cinema"
+          onChange={onFilterChange}
         />
       </form>
     </div>

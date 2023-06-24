@@ -8,36 +8,46 @@ function MainPage() {
   const [movies, setMovies] = useState<MovieType[]>([]);
   const [filterValue, setFilterValue] = useState<SearchFilterValue>({
     title: "",
-    cinemaName: "",
+    cinema: "",
     genre: "",
   });
 
   useEffect(() => {
     async function fetchMovies() {
-      const movies = await getMovies();
+      const movies = await getMovies(filterValue.cinema);
       setMovies(movies);
     }
     fetchMovies();
-  }, []);
+  }, [filterValue.cinema]);
 
   const filteredMovies = useMemo(() => {
     let result = Array.from(movies);
+
     if (filterValue.title.length > 0) {
       result = result.filter((movie) =>
         movie.title.includes(filterValue.title)
       );
     }
+
+    if (filterValue.genre.length > 0) {
+      result = result.filter((movie) =>
+        movie.genre.includes(filterValue.genre)
+      );
+    }
+
     return result;
   }, [movies, filterValue]);
 
   const filterChangeHandler = useCallback(
-    (filterValue: SearchFilterValue) => {
-      setFilterValue(filterValue);
+    (
+      name: FilterNameType,
+      value: string | number | readonly string[] | undefined
+    ) => {
+      setFilterValue((prev) => ({ ...prev, [name]: value }));
     },
-    [movies]
+    []
   );
 
-  console.log(movies);
   return (
     <div className={classes.container}>
       <div className={classes.searchFilterContainer}>

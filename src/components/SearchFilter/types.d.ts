@@ -1,3 +1,3 @@
-type FilterNameType = "title" | "cinemaName" | "genre";
+type FilterNameType = "title" | "cinema" | "genre";
 
 type SearchFilterValue = { [key in FilterNameType]: string };
