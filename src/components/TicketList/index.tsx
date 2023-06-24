@@ -2,6 +2,7 @@ import classes from "./styles.module.css";
 import { useState } from "react";
 import Image from "next/image";
 import TicketCounter from "../TicketCounter";
+import Link from "next/link";
 
 type TicketListProps = {
   items: MovieType[];
@@ -21,9 +22,9 @@ TicketList.Item = function Item({ item }: TicketListItemProps) {
           style={{ backgroundImage: `url(${item.posterUrl})` }}
         />
         <div>
-          <div className={classes.ticketLitemTitleistItemTitle}>
+          <Link href={`/movie/${item.id}`} className={classes.itemTitle}>
             {item.title}
-          </div>
+          </Link>
           <div className={classes.itemGenre}>{item.genre}</div>
         </div>
       </div>

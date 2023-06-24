@@ -1,0 +1,11 @@
+.inner {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.orderSummary {
+  border-radius: 8px;
+  background: var(--white-1);
+  padding: var(--spacing-md);
+}

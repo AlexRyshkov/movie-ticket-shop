@@ -9,9 +9,9 @@ function Header() {
       <Link href="/home" className={s.homeLink}>
         Билетопоиск
       </Link>
-      <button className={s.button}>
+      <Link href="/order" className={s.button}>
         <Image alt="basket" src="/icons/basket.svg" width={32} height={32} />
-      </button>
+      </Link>
     </div>
   );
 }

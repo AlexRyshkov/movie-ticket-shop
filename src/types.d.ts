@@ -9,3 +9,10 @@ type MovieType = {
   releaseYear: number;
   reviewIds: any[];
 };
+
+type ReviewType = {
+  id: string;
+  name: string;
+  text: string;
+  rating: number;
+};

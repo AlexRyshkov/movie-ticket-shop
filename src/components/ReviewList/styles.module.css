@@ -1,0 +1,50 @@
+.list {
+  display: flex;
+  flex-flow: column;
+  row-gap: var(--spacing-md);
+
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.review {
+  display: flex;
+  column-gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  background: var(--background-primary, #fff);
+}
+
+.avatarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-5);
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.info {
+  flex: 1;
+}
+
+.authorRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+
+.author {
+  font-weight: 600;
+}
+
+.rate {
+  margin-left: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 24px;
+}

@@ -2,9 +2,11 @@ import React from "react";
 import s from "./styles.module.css";
 import Image from "next/image";
 import TicketCounter from "@/components/TicketCounter";
+import ReviewList from "@/components/ReviewList";
 
 type Props = {
   movie: MovieType;
+  reviews: ReviewType[];
 };
 
 type InfoLineProps = {
@@ -21,29 +23,34 @@ function InfoLine({ label, text }: InfoLineProps) {
   );
 }
 
-function Movie({ movie }: Props) {
+function Movie({ movie, reviews }: Props) {
   return (
-    <div className={s.informationBlock}>
-      <Image
-        alt="poster"
-        src={movie.posterUrl}
-        width={400}
-        height={500}
-        className={s.poster}
-      />
-      <div className={s.information}>
-        <div className={s.titleRow}>
-          <span className={s.title}>{movie.title}</span>
-          <TicketCounter />
+    <div>
+      <div className={s.informationBlock}>
+        <Image
+          alt="poster"
+          src={movie.posterUrl}
+          width={400}
+          height={500}
+          className={s.poster}
+        />
+        <div className={s.information}>
+          <div className={s.titleRow}>
+            <span className={s.title}>{movie.title}</span>
+            <TicketCounter />
+          </div>
+          <div className={s.infoBlock}>
+            <InfoLine label="Жанр:" text={movie.genre} />
+            <InfoLine label="Год выпуска:" text={String(movie.releaseYear)} />
+            <InfoLine label="Рейтинг:" text={String(movie.rating)} />
+            <InfoLine label="Режиссер:" text={movie.director} />
+          </div>
+          <div className={s.descriptionTitle}>Описание</div>
+          <div className={s.description}>{movie.description}</div>
         </div>
-        <div className={s.infoBlock}>
-          <InfoLine label="Жанр:" text={movie.genre} />
-          <InfoLine label="Год выпуска:" text={String(movie.releaseYear)} />
-          <InfoLine label="Рейтинг:" text={String(movie.rating)} />
-          <InfoLine label="Режиссер:" text={movie.director} />
-        </div>
-        <div className={s.descriptionTitle}>Описание</div>
-        <div className={s.description}>{movie.description}</div>
+      </div>
+      <div className={s.reviewListContainer}>
+        <ReviewList reviews={reviews} />
       </div>
     </div>
   );
@@ -69,12 +76,23 @@ type getStaticPropsType = {
 };
 
 export async function getStaticProps({ params }: getStaticPropsType) {
-  const res = await fetch(
-    `${process.env.API_URL}/movie?` +
-      new URLSearchParams({
-        movieId: params.id,
-      })
-  );
-  const movie: MovieType = await res.json();
-  return { props: { movie } };
+  const movie = await (
+    await fetch(
+      `${process.env.API_URL}/movie?` +
+        new URLSearchParams({
+          movieId: params.id,
+        })
+    )
+  ).json();
+
+  const reviews = await (
+    await fetch(
+      `${process.env.API_URL}/reviews?` +
+        new URLSearchParams({
+          movieId: params.id,
+        })
+    )
+  ).json();
+
+  return { props: { movie, reviews } };
 }

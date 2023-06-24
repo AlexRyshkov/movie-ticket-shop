@@ -11,6 +11,7 @@
   --white-1: #ffffff;
   --white-2: #f5f5f5;
   --gray-1: #333333;
+  --gray-5: #e0e0e0;
   --orange: #f50;
   --orange-disabled: #ffa375;
 
@@ -33,4 +34,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+.grow {
+  flex: 1;
 }
