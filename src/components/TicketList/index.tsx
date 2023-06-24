@@ -1,6 +1,7 @@
 import classes from "./styles.module.css";
 import { useState } from "react";
 import Image from "next/image";
+import TicketCounter from "../TicketCounter";
 
 type TicketListProps = {
   items: MovieType[];
@@ -8,34 +9,6 @@ type TicketListProps = {
 
 type TicketListItemProps = {
   item: MovieType;
-};
-
-const MaxTicketCount = 30;
-
-TicketList.TicketCounter = function Counter() {
-  const [count, setCount] = useState<number>(0);
-
-  return (
-    <div className={classes.counter}>
-      <button
-        name="remove"
-        disabled={count === 0}
-        className={classes.counterButton}
-        onClick={() => setCount((prev) => prev - 1)}
-      >
-        <Image alt="minus" src="/icons/minus.svg" width={12} height={12} />
-      </button>
-      <span className={classes.counterValue}>{count}</span>
-      <button
-        name="add"
-        disabled={count === MaxTicketCount}
-        className={classes.counterButton}
-        onClick={() => setCount((prev) => prev + 1)}
-      >
-        <Image alt="plus" src="/icons/plus.svg" width={12} height={12} />
-      </button>
-    </div>
-  );
 };
 
 TicketList.Item = function Item({ item }: TicketListItemProps) {
@@ -55,7 +28,7 @@ TicketList.Item = function Item({ item }: TicketListItemProps) {
         </div>
       </div>
       <div className={classes.itemRight}>
-        <TicketList.TicketCounter />
+        <TicketCounter />
       </div>
     </div>
   );
