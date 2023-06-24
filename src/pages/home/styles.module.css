@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  column-gap: var(--spacing-md);
+}
+
+.searchFilterContainer {
+  height: 50vh;
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-md));
+  width: 408px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ticketListContainer {
+  flex: 1;
+}

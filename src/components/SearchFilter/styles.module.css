@@ -1,0 +1,62 @@
+.searchFilter {
+  padding: var(--spacing-md);
+}
+
+.title {
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-sm);
+}
+
+.select,
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid var(--border-default, #e1e3e6);
+  background: var(--background-primary, #fff);
+
+  color: var(--text-tertiary);
+  font-size: 14px;
+  line-height: 20px;
+
+  padding: 10px 16px;
+}
+
+.select:focus,
+.input:focus {
+  color: var(--text-primary);
+  outline: solid 1px var(--orange);
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.selectArrow {
+  position: absolute;
+  fill: var(--text-tertiary);
+  top: 10px;
+  right: 16px;
+}
+
+.formControlLabel {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}

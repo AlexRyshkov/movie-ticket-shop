@@ -1,0 +1,18 @@
+.header {
+    height: var(--header-height);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-weight: 700;
+    font-size: 32px;
+    background: var(--gray-1);
+    color: var(--white-1);
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
