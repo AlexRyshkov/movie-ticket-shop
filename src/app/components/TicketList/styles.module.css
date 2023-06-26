@@ -7,9 +7,6 @@
 .item {
   display: flex;
   justify-content: space-between;
-  padding: var(--spacing-md);
-  border-radius: 8px;
-  background: var(--white-1);
 }
 
 .itemLeft {

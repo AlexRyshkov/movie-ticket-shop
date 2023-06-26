@@ -35,14 +35,6 @@
 }
 
 .orderLink {
-  border: none;
-  background: none;
-  cursor: pointer;
   width: 32px;
   height: 32px;
-}
-
-.homeLink {
-  color: inherit;
-  text-decoration: none;
 }

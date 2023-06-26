@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import s from "./styles.module.css";
-import { useOrderContext } from "@/features/order/OrderContext";
+import { useOrderContext } from "@/app/features/order/OrderContext";
 
 const MaxTicketCount = 30;
 

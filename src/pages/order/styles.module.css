@@ -9,9 +9,8 @@
   font-weight: 600;
   line-height: 20px;
 
-  border-radius: 8px;
-  background: var(--white-1);
-  padding: var(--spacing-md);
   display: flex;
   justify-content: space-between;
+
+  margin-top: var(--spacing-md);
 }

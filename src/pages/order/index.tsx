@@ -1,8 +1,9 @@
-import TicketList from "@/components/TicketList";
+import TicketList from "@/app/components/TicketList";
 import React, { useMemo } from "react";
 import s from "./styles.module.css";
-import { useOrderContext } from "@/features/order/OrderContext";
-import useTicketCount from "@/features/order/useTicketCount";
+import { useOrderContext } from "@/app/features/order/OrderContext";
+import useTicketCount from "@/app/features/order/useTicketCount";
+import classnames from "classnames";
 
 type Props = {
   movies: MovieType[];
@@ -19,9 +20,14 @@ function Order({ movies }: Props) {
 
   return (
     <div className={s.inner}>
-      <TicketList items={orderMovies} />
+      {orderMovies.length > 0 ? (
+        <TicketList items={orderMovies} />
+      ) : (
+        <div className="paperBlock">Корзина пуста</div>
+      )}
+
       <div className="grow" />
-      <div className={s.orderSummary}>
+      <div className={classnames("paperBlock", s.orderSummary)}>
         <span>Итого билетов:</span>
         <span>{ticketCount}</span>
       </div>

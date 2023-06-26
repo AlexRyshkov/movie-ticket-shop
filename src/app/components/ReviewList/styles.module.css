@@ -11,8 +11,6 @@
   display: flex;
   column-gap: var(--spacing-md);
   padding: var(--spacing-md);
-  border-radius: 8px;
-  background: var(--background-primary, #fff);
 }
 
 .avatarWrapper {

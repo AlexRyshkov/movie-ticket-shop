@@ -1,8 +1,8 @@
 import React from "react";
 import s from "./styles.module.css";
 import Image from "next/image";
-import TicketCounter from "@/components/TicketCounter";
-import ReviewList from "@/components/ReviewList";
+import TicketCounter from "@/app/components/TicketList/TicketCounter";
+import ReviewList from "@/app/components/ReviewList";
 
 type Props = {
   movie: MovieType;

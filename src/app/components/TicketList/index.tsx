@@ -1,8 +1,6 @@
+import classnames from "classnames";
+import TicketCounter from "./TicketCounter";
 import classes from "./styles.module.css";
-import { useState } from "react";
-import Image from "next/image";
-import TicketCounter from "../TicketCounter";
-import Link from "next/link";
 
 type TicketListProps = {
   items: MovieType[];
@@ -14,7 +12,7 @@ type TicketListItemProps = {
 
 TicketList.Item = function Item({ item }: TicketListItemProps) {
   return (
-    <div key={item.id} className={classes.item}>
+    <div key={item.id} className={classnames("paperBlock", classes.item)}>
       <div className={classes.itemLeft}>
         <img
           src={item.posterUrl}
@@ -22,9 +20,9 @@ TicketList.Item = function Item({ item }: TicketListItemProps) {
           style={{ backgroundImage: `url(${item.posterUrl})` }}
         />
         <div>
-          <Link href={`/movie/${item.id}`} className={classes.itemTitle}>
+          <a href={`/movie/${item.id}`} className={classes.itemTitle}>
             {item.title}
-          </Link>
+          </a>
           <div className={classes.itemGenre}>{item.genre}</div>
         </div>
       </div>
@@ -39,7 +37,7 @@ function TicketList({ items }: TicketListProps) {
   return (
     <div className={classes.list}>
       {items.map((item) => (
-        <TicketList.Item item={item} />
+        <TicketList.Item key={item.id} item={item} />
       ))}
     </div>
   );

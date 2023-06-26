@@ -1,17 +1,17 @@
 import React from "react";
 import s from "./styles.module.css";
 import Image from "next/image";
+import classNames from "classnames";
 
 type ReviewListProps = {
   reviews: ReviewType[];
 };
 
 function ReviewList({ reviews }: ReviewListProps) {
-  console.log(reviews);
   return (
     <div className={s.list}>
       {reviews.map((review) => (
-        <div className={s.review}>
+        <div key={review.id} className={classNames("paperBlock", s.review)}>
           <div className={s.avatarWrapper}>
             <Image src="/icons/photo.svg" alt="author" width={32} height={32} />
           </div>

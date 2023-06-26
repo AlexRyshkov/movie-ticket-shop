@@ -39,3 +39,15 @@ body {
 .grow {
   flex: 1;
 }
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.paperBlock {
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  background: var(--white-1);
+}

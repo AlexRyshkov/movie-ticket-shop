@@ -1,31 +1,36 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import classes from "./styles.module.css";
-import TicketList from "@/components/TicketList";
-import SearchFilter from "@/components/SearchFilter";
 import { getMovies } from "@/services/api/movie";
+import { useQuery } from "@tanstack/react-query";
+import classNames from "classnames";
+import SearchFilter from "@/app/components/SearchFilter";
+import TicketList from "@/app/components/TicketList";
+import LoadingIndicator from "@/app/components/LoadingIndicator";
+import debounce from "lodash.debounce";
 
 function MainPage() {
-  const [movies, setMovies] = useState<MovieType[]>([]);
   const [filterValue, setFilterValue] = useState<SearchFilterValue>({
     title: "",
     cinema: "",
     genre: "",
   });
 
-  useEffect(() => {
-    async function fetchMovies() {
-      const movies = await getMovies(filterValue.cinema);
-      setMovies(movies);
-    }
-    fetchMovies();
-  }, [filterValue.cinema]);
+  const { isLoading, data: movies } = useQuery<MovieType[]>({
+    queryKey: ["movies", { cinema: filterValue.cinema }],
+    queryFn: () => getMovies(filterValue.cinema),
+    staleTime: 5 * 60 * 1000,
+  });
 
   const filteredMovies = useMemo(() => {
-    let result = Array.from(movies);
+    if (!movies) {
+      return [];
+    }
+
+    let result = Array.from(movies as MovieType[]);
 
     if (filterValue.title.length > 0) {
       result = result.filter((movie) =>
-        movie.title.includes(filterValue.title)
+        movie.title.toLowerCase().includes(filterValue.title.toLowerCase())
       );
     }
 
@@ -39,25 +44,32 @@ function MainPage() {
   }, [movies, filterValue]);
 
   const filterChangeHandler = useCallback(
-    (
-      name: FilterNameType,
-      value: string | number | readonly string[] | undefined
-    ) => {
-      setFilterValue((prev) => ({ ...prev, [name]: value }));
-    },
+    (name: string, value: string | null) =>
+      setFilterValue((prev) => ({ ...prev, [name]: value ?? "" })),
     []
   );
 
+  const debouncedFilter = useMemo(() => {
+    return debounce(filterChangeHandler, 500);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      debouncedFilter.cancel();
+    };
+  });
+
   return (
     <div className={classes.container}>
-      <div className={classes.searchFilterContainer}>
-        <SearchFilter
-          filterValue={filterValue}
-          onFilterChange={filterChangeHandler}
-        />
+      <div className={classNames("paperBlock", classes.searchFilterContainer)}>
+        <SearchFilter onFilterChange={debouncedFilter} />
       </div>
       <div className={classes.ticketListContainer}>
-        {filteredMovies?.length > 0 && <TicketList items={filteredMovies} />}
+        {isLoading ? (
+          <LoadingIndicator />
+        ) : (
+          <TicketList items={filteredMovies} />
+        )}
       </div>
     </div>
   );
