@@ -8,7 +8,7 @@ export interface SelectOption {
     value: string
 }
 
-const DropdownIndicator = (props: DropdownIndicatorProps) => {
+const DropdownIndicator = (props: DropdownIndicatorProps<SelectOption>) => {
     return (
         <components.DropdownIndicator {...props}>
             <Image
