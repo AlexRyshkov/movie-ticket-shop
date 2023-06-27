@@ -54,7 +54,7 @@ function MainPage() {
     )
 
     const debouncedFilter = useMemo(() => {
-        return debounce(filterChangeHandler, 500)
+        return debounce(filterChangeHandler, 200)
     }, [filterChangeHandler])
 
     useEffect(() => {
