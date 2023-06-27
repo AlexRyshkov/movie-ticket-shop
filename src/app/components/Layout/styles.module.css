@@ -1,19 +1,19 @@
 .layout {
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
 }
 
 .contentContainer {
-  flex: 1 1 auto;
-  padding: var(--spacing-md) var(--spacing-lg);
+    flex: 1 1 auto;
+    padding: var(--spacing-md) var(--spacing-lg);
 }
 
 .headerContainer {
-  position: sticky;
-  top: 0;
+    position: sticky;
+    top: 0;
 }
 
 .footerContainer {
-  width: 100%;
+    width: 100%;
 }

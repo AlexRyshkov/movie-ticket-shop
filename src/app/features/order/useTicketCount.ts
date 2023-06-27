@@ -1,14 +1,14 @@
-import {useMemo} from "react";
+import { useMemo } from 'react'
 
 function useTicketCount(order: Order) {
-  const count = useMemo(() => {
-    return order.reduce(
-      (count: number, currentItem) => count + currentItem.ticketCount,
-      0
-    );
-  }, [order]);
+    const count = useMemo(() => {
+        return order.reduce(
+            (count: number, currentItem) => count + currentItem.ticketCount,
+            0
+        )
+    }, [order])
 
-  return count;
+    return count
 }
 
-export default useTicketCount;
+export default useTicketCount

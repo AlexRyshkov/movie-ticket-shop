@@ -1,40 +1,40 @@
 .header {
-  height: var(--header-height);
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-md) var(--spacing-lg);
-  font-weight: 700;
-  font-size: 32px;
-  background: var(--gray-1);
-  color: var(--white-1);
+    height: var(--header-height);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-weight: 700;
+    font-size: 32px;
+    background: var(--gray-1);
+    color: var(--white-1);
 }
 
 .order {
-  display: flex;
-  column-gap: var(--spacing-xs);
-  align-items: center;
+    display: flex;
+    column-gap: var(--spacing-xs);
+    align-items: center;
 }
 
 .ticketCount {
-  display: flex;
+    display: flex;
 
-  width: 28px;
-  height: 28px;
+    width: 28px;
+    height: 28px;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  border-radius: 8px;
-  background: var(--orange);
+    border-radius: 8px;
+    background: var(--orange);
 
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
 }
 
 .orderLink {
-  width: 32px;
-  height: 32px;
+    width: 32px;
+    height: 32px;
 }

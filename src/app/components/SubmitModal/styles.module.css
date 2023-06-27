@@ -1,67 +1,67 @@
 .backdrop {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 5;
-  background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .titleRow {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 20px;
-  margin-bottom: var(--spacing-sm);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .message {
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: var(--spacing-md);
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: var(--spacing-md);
 }
 
 .actions {
-  display: flex;
+    display: flex;
 }
 
 .submit,
 .cancel {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
 
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 8px;
-  border: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 8px;
+    border: none;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .submit {
-  margin-right: var(--spacing-xs);
-  background: var(--orange);
-  color: var(--white-1);
+    margin-right: var(--spacing-xs);
+    background: var(--orange);
+    color: var(--white-1);
 }
 
 .cancel {
-  color: var(--orange);
-  background: none;
-  border: 1px solid var(--orange);
+    color: var(--orange);
+    background: none;
+    border: 1px solid var(--orange);
 }
 
 .closeIcon {
-  cursor: pointer;
+    cursor: pointer;
 }

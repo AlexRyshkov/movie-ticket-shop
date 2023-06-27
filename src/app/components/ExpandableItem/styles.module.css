@@ -1,11 +1,11 @@
 .item {
-  display: flex;
-  flex-flow: column;
-  row-gap: var(--spacing-sm);
-  cursor: pointer;
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-sm);
+    cursor: pointer;
 }
 
 .contentRow {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }

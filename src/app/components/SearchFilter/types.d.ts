@@ -1,1 +1,1 @@
-type SearchFilterValue = { [key: string]: string };
+type SearchFilterValue = { [key: string]: string }

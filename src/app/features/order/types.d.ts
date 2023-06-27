@@ -1,13 +1,13 @@
 type OrderItem = {
-  movieId: string;
-  ticketCount: number;
-};
+    movieId: string
+    ticketCount: number
+}
 
-type Order = OrderItem[];
+type Order = OrderItem[]
 
-type ActionKind = "addTicket" | "removeTicket" | "init";
+type ActionKind = 'addTicket' | 'removeTicket' | 'init'
 
 type Action = {
-  type: ActionKind;
-  payload: string | Order;
-};
+    type: ActionKind
+    payload: string | Order
+}

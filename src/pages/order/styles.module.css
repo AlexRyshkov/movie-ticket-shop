@@ -1,16 +1,16 @@
 .inner {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
 }
 
 .orderSummary {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
 
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-  margin-top: var(--spacing-md);
+    margin-top: var(--spacing-md);
 }

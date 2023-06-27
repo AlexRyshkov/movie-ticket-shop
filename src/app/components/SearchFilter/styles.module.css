@@ -1,41 +1,40 @@
-
 .title {
-  font-weight: 600;
-  line-height: 20px;
-  margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 20px;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-sm);
 }
 
 .input {
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 8px;
-  border: 1px solid var(--border-default, #e1e3e6);
-  background: var(--background-primary, #fff);
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #e1e3e6);
+    background: var(--background-primary, #fff);
 
-  font-size: 14px;
-  line-height: 20px;
+    font-size: 14px;
+    line-height: 20px;
 
-  padding: 10px 16px;
+    padding: 10px 16px;
 }
 
 .input::placeholder {
-  color: var(--text-tertiary);
-  opacity: 1;
+    color: var(--text-tertiary);
+    opacity: 1;
 }
 
 .input:focus {
-  outline: solid 1px var(--orange);
+    outline: solid 1px var(--orange);
 }
 
 .formControlLabel {
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 4px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
 }

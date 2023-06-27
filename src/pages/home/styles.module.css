@@ -1,15 +1,15 @@
 .container {
-  display: flex;
-  column-gap: var(--spacing-md);
+    display: flex;
+    column-gap: var(--spacing-md);
 }
 
 .searchFilterContainer {
-  height: 50vh;
-  position: sticky;
-  top: calc(var(--header-height) + var(--spacing-md));
-  width: 408px;
+    height: 50vh;
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-md));
+    width: 408px;
 }
 
 .ticketListContainer {
-  flex: 1;
+    flex: 1;
 }

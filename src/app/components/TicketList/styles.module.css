@@ -1,37 +1,37 @@
 .list {
-  display: flex;
-  flex-flow: column;
-  row-gap: var(--spacing-sm);
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-sm);
 }
 
 .item {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .itemLeft {
-  display: flex;
-  column-gap: var(--spacing-md);
+    display: flex;
+    column-gap: var(--spacing-md);
 }
 
 .itemPoster {
-  border-radius: 8px;
-  background: lightgray;
-  object-fit: cover;
+    border-radius: 8px;
+    background: lightgray;
+    object-fit: cover;
 }
 
 .itemTitle {
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
 
-  color: var(--text-primary);
+    color: var(--text-primary);
 }
 
 .itemGenre {
-  font-size: 16px;
-  font-style: italic;
-  line-height: 20px;
-  margin-top: var(--spacing-xs);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 20px;
+    margin-top: var(--spacing-xs);
 }

@@ -31,7 +31,10 @@ TicketList.Item = function Item({ item }: TicketListItemProps) {
                     className={classes.itemPoster}
                 />
                 <div>
-                    <Link href={`/movie/${item.id}`} className={classes.itemTitle}>
+                    <Link
+                        href={`/movie/${item.id}`}
+                        className={classes.itemTitle}
+                    >
                         {item.title}
                     </Link>
                     <div className={classes.itemGenre}>

@@ -1,23 +1,23 @@
 .titleBlock {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 32px;
-  margin-bottom: var(--spacing-md);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: var(--spacing-md);
 }
 
 .list {
-  display: flex;
-  flex-flow: column;
-  row-gap: var(--spacing-sm);
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-sm);
 }
 
 .question {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
 }
 
 .answer {
-  font-size: 16px;
-  line-height: 24px;
+    font-size: 16px;
+    line-height: 24px;
 }
