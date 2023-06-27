@@ -5,8 +5,8 @@ import Link from "next/link";
 function Footer() {
   return (
     <div className={s.footer}>
-      <a href="/faq">Вопросы-ответы</a>
-      <a href="/about">О нас</a>
+      <Link href="/faq">Вопросы-ответы</Link>
+      <Link href="/about">О нас</Link>
     </div>
   );
 }
