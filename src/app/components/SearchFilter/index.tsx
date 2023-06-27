@@ -1,3 +1,5 @@
+'use client'
+
 import { ChangeEvent, ReactNode, useEffect, useState } from 'react'
 import classes from './styles.module.css'
 import { getCinemas } from '@/services/api/cinema'
@@ -40,7 +42,7 @@ function SearchFilter({ onFilterChange }: SearchFilterProps) {
             const cinemas = await getCinemas()
             setCinemas(cinemas)
         }
-        fetchCinemas()
+        void fetchCinemas()
     }, [])
 
     const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {

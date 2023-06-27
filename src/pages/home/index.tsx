@@ -1,3 +1,5 @@
+'use client'
+
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import classes from './styles.module.css'
 import { getMovies } from '@/services/api/movie'

@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import s from './styles.module.css'
 import { useOrderContext } from '@/app/features/order/OrderContext'

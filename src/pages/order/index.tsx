@@ -1,3 +1,5 @@
+'use client'
+
 import TicketList from '@/app/components/TicketList'
 import React, { useMemo } from 'react'
 import s from './styles.module.css'
