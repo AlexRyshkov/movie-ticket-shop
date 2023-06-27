@@ -1,10 +1,9 @@
 "use client";
 
 import classnames from "classnames";
-import { LegacyRef, MouseEvent } from "react";
-import React, { useRef } from "react";
+import React, {MouseEvent, useRef} from "react";
 import s from "./styles.module.css";
-import { createPortal } from "react-dom";
+import {createPortal} from "react-dom";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 

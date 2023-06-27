@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, {ReactNode, useState} from "react";
 import s from "./styles.module.css";
 import Image from "next/image";
 

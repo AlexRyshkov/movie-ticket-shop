@@ -1,7 +1,7 @@
 import TicketList from "@/app/components/TicketList";
-import React, { useMemo } from "react";
+import React, {useMemo} from "react";
 import s from "./styles.module.css";
-import { useOrderContext } from "@/app/features/order/OrderContext";
+import {useOrderContext} from "@/app/features/order/OrderContext";
 import useTicketCount from "@/app/features/order/useTicketCount";
 import classnames from "classnames";
 

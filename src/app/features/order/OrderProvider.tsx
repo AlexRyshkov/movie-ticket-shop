@@ -1,14 +1,8 @@
-import React, {
-    ReactNode,
-    useCallback,
-    useEffect,
-    useReducer,
-    useState,
-} from 'react'
-import { OrderContext } from './OrderContext'
+import React, {ReactNode, useCallback, useEffect, useReducer, useState,} from 'react'
+import {OrderContext} from './OrderContext'
 import SubmitModal from '@/app/components/SubmitModal'
 import reducer from './reducer'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 
 type Props = {
     children: ReactNode

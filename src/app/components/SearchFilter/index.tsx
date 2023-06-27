@@ -1,9 +1,8 @@
-import { ChangeEvent, ReactNode, useEffect, useState } from "react";
+import {ChangeEvent, ReactNode, useEffect, useState} from "react";
 import classes from "./styles.module.css";
-import { getCinemas } from "@/services/api/cinema";
-import Image from "next/image";
-import { ActionMeta, MultiValue, SingleValue } from "react-select";
-import Select, { SelectOption } from "./Select";
+import {getCinemas} from "@/services/api/cinema";
+import {ActionMeta, MultiValue, SingleValue} from "react-select";
+import Select, {SelectOption} from "./Select";
 
 type FormControlProps = {
   label: string;

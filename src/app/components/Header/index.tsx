@@ -2,7 +2,7 @@ import React from "react";
 import s from "./styles.module.css";
 import Image from "next/image";
 import useTicketCount from "@/app/features/order/useTicketCount";
-import { useOrderContext } from "@/app/features/order/OrderContext";
+import {useOrderContext} from "@/app/features/order/OrderContext";
 import Link from "next/link";
 
 function Header() {

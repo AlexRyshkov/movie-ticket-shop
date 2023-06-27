@@ -1,7 +1,7 @@
-import React, { useId } from "react";
-import ReactSelect, { DropdownIndicatorProps, components } from "react-select";
+import React, {useId} from "react";
+import ReactSelect, {components, DropdownIndicatorProps} from "react-select";
 import Image from "next/image";
-import { StateManagerProps } from "react-select/dist/declarations/src/useStateManager";
+import {StateManagerProps} from "react-select/dist/declarations/src/useStateManager";
 
 export interface SelectOption {
   label: string;
