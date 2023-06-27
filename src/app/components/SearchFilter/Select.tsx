@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import ReactSelect, { components } from "react-select";
+import ReactSelect, { DropdownIndicatorProps, components } from "react-select";
 import Image from "next/image";
 import { StateManagerProps } from "react-select/dist/declarations/src/useStateManager";
 
@@ -8,7 +8,7 @@ export interface SelectOption {
   value: string;
 }
 
-const DropdownIndicator = (props: any) => {
+const DropdownIndicator = (props: DropdownIndicatorProps) => {
   return (
     <components.DropdownIndicator {...props}>
       <Image

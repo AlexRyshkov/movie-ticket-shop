@@ -1,6 +1,7 @@
 "use client";
 
 import classnames from "classnames";
+import { LegacyRef, MouseEvent } from "react";
 import React, { useRef } from "react";
 import s from "./styles.module.css";
 import { createPortal } from "react-dom";
@@ -15,9 +16,9 @@ type Props = {
 };
 
 function SubmitModal({ title, message, onSubmit, onClose }: Props) {
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const outsideClickHandle = (e: any) => {
+  const outsideClickHandle = (e: MouseEvent<HTMLElement>) => {
     if (e.target === ref.current) {
       onClose();
     }

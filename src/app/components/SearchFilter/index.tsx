@@ -2,8 +2,8 @@ import { ChangeEvent, ReactNode, useEffect, useState } from "react";
 import classes from "./styles.module.css";
 import { getCinemas } from "@/services/api/cinema";
 import Image from "next/image";
-import { ActionMeta } from "react-select";
-import Select from "./Select";
+import { ActionMeta, MultiValue, SingleValue } from "react-select";
+import Select, { SelectOption } from "./Select";
 
 type FormControlProps = {
   label: string;
@@ -11,7 +11,7 @@ type FormControlProps = {
 };
 
 type SearchFilterProps = {
-  onFilterChange: (name: string, value: string) => void;
+  onFilterChange: (name: string, value: string | null) => void;
 };
 
 const genreOptions = [
@@ -48,9 +48,15 @@ function SearchFilter({ onFilterChange }: SearchFilterProps) {
     onFilterChange(event.target.name, event.target.value);
   };
 
-  const selectChangeHandler = (option: any, actionMeta: any) => {
+  const selectChangeHandler = (
+    option: SingleValue<SelectOption> | MultiValue<SelectOption>,
+    actionMeta: ActionMeta<SelectOption>
+  ) => {
     if (actionMeta.name !== undefined) {
-      onFilterChange(actionMeta.name, option?.value ?? null);
+      onFilterChange(
+        actionMeta.name,
+        (option as SingleValue<SelectOption>)?.value ?? null
+      );
     }
   };
 

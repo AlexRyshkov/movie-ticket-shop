@@ -9,5 +9,5 @@ type ActionKind = "addTicket" | "removeTicket" | "init";
 
 type Action = {
   type: ActionKind;
-  payload: any;
+  payload: string | Order;
 };

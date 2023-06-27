@@ -2,6 +2,13 @@ import classnames from "classnames";
 import TicketCounter from "./TicketCounter";
 import classes from "./styles.module.css";
 
+const genres: { [key in string]: string } = {
+  comedy: "Комедия",
+  action: "Боевик",
+  horror: "Ужасы",
+  fantasy: "Фэнтези",
+};
+
 type TicketListProps = {
   items: MovieType[];
 };
@@ -23,7 +30,7 @@ TicketList.Item = function Item({ item }: TicketListItemProps) {
           <a href={`/movie/${item.id}`} className={classes.itemTitle}>
             {item.title}
           </a>
-          <div className={classes.itemGenre}>{item.genre}</div>
+          <div className={classes.itemGenre}>{genres[item.genre]}</div>
         </div>
       </div>
       <div className={classes.itemRight}>

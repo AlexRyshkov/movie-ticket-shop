@@ -7,7 +7,7 @@ type MovieType = {
   posterUrl: string;
   rating: number;
   releaseYear: number;
-  reviewIds: any[];
+  reviewIds: string[];
 };
 
 type ReviewType = {

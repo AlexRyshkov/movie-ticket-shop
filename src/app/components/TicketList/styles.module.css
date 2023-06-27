@@ -27,7 +27,7 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 20px;
-  margin-bottom: var(--spacing-xs);
+
   color: var(--text-primary);
 }
 
@@ -35,4 +35,5 @@
   font-size: 16px;
   font-style: italic;
   line-height: 20px;
+  margin-top: var(--spacing-xs);
 }
